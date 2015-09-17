@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html ng-app="formModule">
+		<head>
+			<title>Hide-a-Form</title>
+			<meta charset="utf-8">
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+			<link type="text/css" rel="stylesheet" href="styles.css">
+		</head>
+		<body ng-controller="formController">
+			<h1>Edit Profile</h1>
+			<button>Show Form</button>
+			<button>Hide Form</button>
+			<form>
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>Species / Breed:</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>Location:</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>Profession:</td>
+						<td><input type="text"></td>
+					</tr>
+				</table>
+				<input type="submit">
+			</form>
+			<script src="script.js"></script>
+		</body>
+	</html>
