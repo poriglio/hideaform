@@ -4,33 +4,39 @@
 			<title>Hide-a-Form</title>
 			<meta charset="utf-8">
 			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+			<script src="script.js"></script>
 			<link type="text/css" rel="stylesheet" href="styles.css">
 		</head>
 		<body ng-controller="formController">
 			<h1>Edit Profile</h1>
-			<button>Show Form</button>
-			<button>Hide Form</button>
-			<form>
+			<button ng-click="showButtonClick()" ng-hide="visibility" class="show-button visibility-button">Show Form<button ng-click="hideButtonClick()" class="hide-button visibility-button" ng-show="visibility">Hide Form</button></button>
+			<form ng-show="visibility">
 				<table>
 					<tr>
 						<td>Name:</td>
-						<td><input type="text"></td>
+						<td><input ng-model="editUserName" type="text"></td>
 					</tr>
 					<tr>
-						<td>Species / Breed:</td>
-						<td><input type="text"></td>
+						<td>Species:</td>
+						<td><input ng-model="editUserInfo[0]" type="text"></td>
 					</tr>
 					<tr>
 						<td>Location:</td>
-						<td><input type="text"></td>
+						<td><input ng-model="editUserInfo[1]" type="text"></td>
 					</tr>
 					<tr>
 						<td>Profession:</td>
-						<td><input type="text"></td>
+						<td><input ng-model="editUserInfo[2]" type="text"></td>
 					</tr>
 				</table>
-				<input type="submit">
+				<input type="submit" ng-click="submit()">
 			</form>
-			<script src="script.js"></script>
+			<div class="profile">
+				<img class="profile-image" src="http://lorempixel.com/200/200">
+				<h1>{{userName}}</h1>
+				<div ng-repeat="thing in userInfo">
+					<p>{{thing}}</p>
+				</div>
+			</div>
 		</body>
 	</html>
