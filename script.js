@@ -15,13 +15,14 @@ angular.module("formModule").controller("formController",["$scope", function($sc
 	$scope.userName = "Name"
 	$scope.userInfo = ["Species: ","Location: ","Profession: "]
 
+	$scope.editUserName = ""
+	$scope.editUserInfo = ["","",""]
+
 	$scope.submit = function ( $event ) {
 		$scope.userName = $scope.editUserName
 		$scope.visibility = false; 
 		$scope.userInfo = $scope.editUserInfo
 	}
 
-	$scope.editUserName = ""
-	$scope.editUserInfo = ["","",""]
 
 }])
